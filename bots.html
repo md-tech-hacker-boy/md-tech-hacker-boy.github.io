@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD TECH | Bots</title>
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/4do0hv.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="stars-container" id="stars"></div>
+
+    <!-- Modal Popup -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon"><i class="fas fa-robot"></i></div>
+                <div class="modal-title">
+                    <h2 id="modalTitle">Bot Name</h2>
+                    <span id="modalSubtitle">@handle</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalDescription">Full description goes here...</p>
+                <h3><i class="fas fa-star"></i> Features</h3>
+                <ul class="feature-list" id="modalFeatures"></ul>
+                <div class="modal-links" id="modalLinks"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="./index.html" class="nav-logo">
+            <img src="https://files.catbox.moe/4do0hv.png" alt="Logo">
+            MD TECH
+        </a>
+        <ul class="nav-links">
+            <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="./about/index.html"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="./channels.html"><i class="fas fa-broadcast-tower"></i> Channels</a></li>
+            <li><a href="./bots.html" class="active"><i class="fas fa-robot"></i> Bots</a></li>
+        </ul>
+        <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="section" style="padding-top: 2rem;">
+                <div class="section-header">
+                    <h2><i class="fas fa-gem"></i> <span class="gradient-text">MD TECH BOT FAMILY</span> <i
+                            class="fas fa-gem"></i></h2>
+                    <p>Click any bot to see more details</p>
+                </div>
+
+                <!-- Developer Credits -->
+                <div class="glass-card" style="max-width: 700px; margin: 0 auto 3rem; text-align: center;">
+                    <h3 style="margin-bottom: 1rem;"><i class="fas fa-code"></i> Developer Credits</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+                        <a href="https://t.me/MD_TECH_HACKER" target="_blank" class="social-btn btn-tg"><i
+                                class="fas fa-crown"></i> Owner: @MD_TECH_HACKER</a>
+                        <a href="https://t.me/MDTECH5" target="_blank" class="social-btn"><i
+                                class="fas fa-user-shield"></i> Co-Owner: @MDTECH5</a>
+                    </div>
+                    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                        <a href="https://t.me/MD_TECH_BOTS" target="_blank" class="card-link"><i
+                                class="fab fa-telegram"></i> @MD_TECH_BOTS</a>
+                        <a href="https://md-tech-hacker.tech/" target="_blank" class="card-link"><i
+                                class="fas fa-globe"></i> Web 1</a>
+                        <a href="https://t.me/MD_TECH_UNIVERSE" target="_blank" class="card-link"><i
+                                class="fab fa-telegram"></i> Official Channel</a>
+                    </div>
+                </div>
+
+                <!-- Bot List -->
+                <div class="cards-grid">
+                    <div class="bot-card" onclick="showBot('ai')">
+                        <div class="bot-icon"><i class="fas fa-brain"></i></div>
+                        <div class="bot-info">
+                            <h4>MD AI</h4><span>@MD_TECH_AI_BOT</span>
+                            <p>AI assistant for coding & chatting</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('cc')">
+                        <div class="bot-icon"><i class="fas fa-credit-card"></i></div>
+                        <div class="bot-info">
+                            <h4>MD TECH CC</h4><span>@MD_TECH_CC_BOT</span>
+                            <p>BIN/card format testing</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('tempmail')">
+                        <div class="bot-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="bot-info">
+                            <h4>MD TEMP MAIL</h4><span>@MD_TEMP_MAIL_BOT</span>
+                            <p>Temporary email generator</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('fakeinfo')">
+                        <div class="bot-icon"><i class="fas fa-id-card"></i></div>
+                        <div class="bot-info">
+                            <h4>MD FAKE INFO</h4><span>@MD_FAKE_INFO_BOT</span>
+                            <p>Dummy identity generator</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('reaction')">
+                        <div class="bot-icon"><i class="fas fa-heart"></i></div>
+                        <div class="bot-info">
+                            <h4>MD REACTION</h4><span>@MD_REACTION_BOT</span>
+                            <p>Auto-emoji reactions</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('premium')">
+                        <div class="bot-icon"><i class="fas fa-star"></i></div>
+                        <div class="bot-info">
+                            <h4>MD PREMIUM</h4><span>@MD_TECH_REFER_BOT</span>
+                            <p>Referral rewards</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('tools')">
+                        <div class="bot-icon"><i class="fas fa-tools"></i></div>
+                        <div class="bot-info">
+                            <h4>MD TECH TOOLS</h4><span>@MD_TECH_TOOLS_BOT</span>
+                            <p>Ethical hacking tools</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('autoreq')">
+                        <div class="bot-icon"><i class="fas fa-user-plus"></i></div>
+                        <div class="bot-info">
+                            <h4>MD AUTO REQUEST</h4><span>@MD_AUTO_REQUEST_BOT</span>
+                            <p>Join request automation</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('giveaway')">
+                        <div class="bot-icon"><i class="fas fa-gift"></i></div>
+                        <div class="bot-info">
+                            <h4>MD GIVEAWAYS</h4><span>@MD_GIVEAWAYS_BOT</span>
+                            <p>Run giveaways easily</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('forward')">
+                        <div class="bot-icon"><i class="fas fa-share"></i></div>
+                        <div class="bot-info">
+                            <h4>MD FORWARDING</h4><span>@MD_FORWARD_BOT</span>
+                            <p>Copy from restricted chats</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('copyright')">
+                        <div class="bot-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="bot-info">
+                            <h4>MD COPYRIGHT</h4><span>@MD_COPYRIGHT_PROTECTION_BOT</span>
+                            <p>Content protection</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('files')">
+                        <div class="bot-icon"><i class="fas fa-folder"></i></div>
+                        <div class="bot-info">
+                            <h4>MD FILES STORAGE</h4><span>@MD_FILES_STORAGE_BOT</span>
+                            <p>Private cloud storage</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('maintenance')">
+                        <div class="bot-icon"><i class="fas fa-cog"></i></div>
+                        <div class="bot-info">
+                            <h4>MD MAINTENANCE</h4><span>@MD_MAINTENANCE_BOT</span>
+                            <p>Uptime & logs tracker</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('userinfo')">
+                        <div class="bot-icon"><i class="fas fa-user"></i></div>
+                        <div class="bot-info">
+                            <h4>MD USER INFO</h4><span>@MD_USER_INFO_BOT</span>
+                            <p>Get user/chat IDs</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('atall')">
+                        <div class="bot-icon"><i class="fas fa-bullhorn"></i></div>
+                        <div class="bot-info">
+                            <h4>MD @ALL</h4><span>@MD_AT_ALL_BOT</span>
+                            <p>Tag all group users</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('smm')">
+                        <div class="bot-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="bot-info">
+                            <h4>MD SMM PANEL</h4><span>@MD_SMM_PANAL_BOT</span>
+                            <p>Social media booster</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('hacking')">
+                        <div class="bot-icon"><i class="fas fa-terminal"></i></div>
+                        <div class="bot-info">
+                            <h4>MD HACKING TOOLS</h4><span>@MD_HACKING_TOOLS_BOT</span>
+                            <p>Cybersecurity testing</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('tech')">
+                        <div class="bot-icon"><i class="fas fa-headset"></i></div>
+                        <div class="bot-info">
+                            <h4>MD TECH</h4><span>@MD_TECH_BOT</span>
+                            <p>Contact & support</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('cloud')">
+                        <div class="bot-icon"><i class="fas fa-cloud"></i></div>
+                        <div class="bot-info">
+                            <h4>MD CLOUD BOTS</h4><span>@MD_CLOUD_BOTS_BOT</span>
+                            <p>Multi-platform cloud</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('social')">
+                        <div class="bot-icon"><i class="fas fa-share-nodes"></i></div>
+                        <div class="bot-info">
+                            <h4>MD SOCIAL</h4><span>@MD_SOCIAL_BOT</span>
+                            <p>Social automation</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('checkers')">
+                        <div class="bot-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="bot-info">
+                            <h4>MD CHECKERS</h4><span>@MD_CHECKERS_BOT</span>
+                            <p>Config/cookie checker</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('autopost')">
+                        <div class="bot-icon"><i class="fas fa-clock"></i></div>
+                        <div class="bot-info">
+                            <h4>MD AUTO POST</h4><span>@MD_AUTO_POST_BOT</span>
+                            <p>Scheduled posting</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('otp')">
+                        <div class="bot-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="bot-info">
+                            <h4>MD TECH OTP</h4><span>@MD_TECH_OTP_BOT</span>
+                            <p>Virtual number OTPs</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('music')">
+                        <div class="bot-icon"><i class="fas fa-music"></i></div>
+                        <div class="bot-info">
+                            <h4>MD MUSIC</h4><span>@MD_TECH_MUSIC_BOT</span>
+                            <p>All-in-One Music Bot</p>
+                        </div>
+                    </div>
+                    <div class="bot-card" onclick="showBot('scrapper')">
+                        <div class="bot-icon"><i class="fas fa-database"></i></div>
+                        <div class="bot-info">
+                            <h4>MD SCRAPPER</h4><span>@MD_SCRAPPER_BOT</span>
+                            <p>Secure OTP bot</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Privacy Policy -->
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-shield-alt"></i> Privacy & Policy</h2>
+                </div>
+                <div class="glass-card" style="max-width: 800px; margin: 0 auto;">
+                    <ul style="list-style: none; padding: 0; line-height: 2.5;">
+                        <li><i class="fas fa-lock" style="color: var(--accent-cyan); margin-right: 12px;"></i>
+                            <strong>Privacy First:</strong> Bots store only minimum data needed
+                        </li>
+                        <li><i class="fas fa-ban" style="color: var(--accent-orange); margin-right: 12px;"></i>
+                            <strong>No Data Sharing:</strong> No logs, no sales
+                        </li>
+                        <li><i class="fas fa-graduation-cap"
+                                style="color: var(--accent-green); margin-right: 12px;"></i> <strong>Education
+                                Only:</strong> Ethical learning and testing</li>
+                        <li><i class="fas fa-user-check" style="color: var(--text-muted); margin-right: 12px;"></i>
+                            <strong>User Responsibility:</strong> You are 100% responsible
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="https://files.catbox.moe/4do0hv.png" alt="Logo">
+            MD TECH
+        </div>
+        <p>&copy; 2026 <strong>MD TECH</strong>. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const botData = {
+            ai: { icon: 'fas fa-brain', name: 'MD AI', handle: '@MD_TECH_AI_BOT', url: 'https://t.me/MD_TECH_AI_BOT', desc: 'AI assistant for coding, questions, and chatting. Supports multi-language, logic, and learning.', features: ['AI-powered responses', 'Multi-language support', 'Code assistance', 'Learning & logic'] },
+            cc: { icon: 'fas fa-credit-card', name: 'MD TECH CC', handle: '@MD_TECH_CC_BOT', url: 'https://t.me/MD_TECH_CC_BOT', desc: 'BIN/card format testing for educational purposes. Developer is not responsible for misuse.', features: ['BIN lookup', 'Card format validation', 'Educational purpose only'] },
+            tempmail: { icon: 'fas fa-envelope', name: 'MD TEMP MAIL', handle: '@MD_TEMP_MAIL_BOT', url: 'https://t.me/MD_TEMP_MAIL_BOT', desc: 'Generate temporary emails instantly. Avoid spam and protect your identity.', features: ['Instant temp emails', 'Multiple domains', 'Inbox reading', 'Privacy protection'] },
+            fakeinfo: { icon: 'fas fa-id-card', name: 'MD FAKE INFO', handle: '@MD_FAKE_INFO_BOT', url: 'https://t.me/MD_FAKE_INFO_BOT', desc: 'Create dummy identities for testing. Country-based info — safe & fake.', features: ['Full identity generation', 'Country selection', 'Safe for testing', 'Address & phone'] },
+            reaction: { icon: 'fas fa-heart', name: 'MD REACTION', handle: '@MD_REACTION_BOT', url: 'https://t.me/MD_REACTION_BOT', desc: 'Auto-emoji react to any post. Boost visibility and engagement.', features: ['Auto reactions', 'Multiple emojis', 'Boost visibility', 'Easy setup'] },
+            premium: { icon: 'fas fa-star', name: 'MD PREMIUM', handle: '@MD_TECH_REFER_BOT', url: 'https://t.me/MD_TECH_REFER_BOT', desc: 'Earn access through referrals and tasks. Unlock exclusive tools.', features: ['Referral rewards', 'Task completion', 'Premium access', 'Exclusive tools'] },
+            tools: { icon: 'fas fa-tools', name: 'MD TECH TOOLS', handle: '@MD_TECH_TOOLS_BOT', url: 'https://t.me/MD_TECH_TOOLS_BOT', desc: 'Ethical hacking tools and scripts. Purely educational with test codes.', features: ['Ethical hacking tools', 'Scripts & utilities', 'Educational only', 'Test codes'] },
+            autoreq: { icon: 'fas fa-user-plus', name: 'MD AUTO REQUEST', handle: '@MD_AUTO_REQUEST_BOT', url: 'https://t.me/MD_AUTO_REQUEST_BOT', desc: 'Automate join requests to groups/channels. Use with permission only.', features: ['Auto-approve requests', 'Admin control', 'Permission-based', 'Group management'] },
+            giveaway: { icon: 'fas fa-gift', name: 'MD GIVEAWAYS', handle: '@MD_GIVEAWAYS_BOT', url: 'https://t.me/MD_GIVEAWAYS_BOT', desc: 'Run giveaways easily. Filters out bots and fakes.', features: ['Easy giveaway setup', 'Bot/fake filtering', 'Winner selection', 'Fair draws'] },
+            forward: { icon: 'fas fa-share', name: 'MD FORWARDING', handle: '@MD_FORWARD_BOT', url: 'https://t.me/MD_FORWARD_BOT', desc: 'Copy content even from restricted chats. Media, formatting, captions preserved.', features: ['Copy restricted content', 'Media preservation', 'Formatting kept', 'Caption support'] },
+            copyright: { icon: 'fas fa-shield-alt', name: 'MD COPYRIGHT', handle: '@MD_COPYRIGHT_PROTECTION_BOT', url: 'https://t.me/MD_COPYRIGHT_PROTECTION_BOT', desc: 'Lock content against forwarding/saving. Ideal for channels & educators.', features: ['Content protection', 'Forward blocking', 'Save prevention', 'Channel security'] },
+            files: { icon: 'fas fa-folder', name: 'MD FILES STORAGE', handle: '@MD_FILES_STORAGE_BOT', url: 'https://t.me/MD_FILES_STORAGE_BOT', desc: 'Upload & tag files like your private cloud. Searchable, safe, organized.', features: ['Private cloud storage', 'File tagging', 'Search functionality', 'Organized folders'] },
+            maintenance: { icon: 'fas fa-cog', name: 'MD MAINTENANCE', handle: '@MD_MAINTENANCE_BOT', url: 'https://t.me/MD_MAINTENANCE_BOT', desc: 'Track uptime, logs, and status. Alerts on crashes or failures.', features: ['Uptime tracking', 'Log monitoring', 'Crash alerts', 'Status reports'] },
+            userinfo: { icon: 'fas fa-user', name: 'MD USER INFO', handle: '@MD_USER_INFO_BOT', url: 'https://t.me/MD_USER_INFO_BOT', desc: 'Get Telegram user/chat/channel IDs. Auto buttons for shared IDs.', features: ['User ID lookup', 'Chat/channel IDs', 'Auto buttons', 'Quick info'] },
+            atall: { icon: 'fas fa-bullhorn', name: 'MD @ALL', handle: '@MD_AT_ALL_BOT', url: 'https://t.me/MD_AT_ALL_BOT', desc: 'Tag all users in a group. Supports custom messages. Needs admin access.', features: ['Tag all members', 'Custom messages', 'Admin required', 'Group notifications'] },
+            smm: { icon: 'fas fa-chart-line', name: 'MD SMM PANEL', handle: '@MD_SMM_PANAL_BOT', url: 'https://t.me/MD_SMM_PANAL_BOT', desc: 'Boost socials: likes, subs, views. Free & paid traffic options.', features: ['Social boosting', 'Likes & views', 'Subscriber growth', 'Free & paid options'] },
+            hacking: { icon: 'fas fa-terminal', name: 'MD HACKING TOOLS', handle: '@MD_HACKING_TOOLS_BOT', url: 'https://t.me/MD_HACKING_TOOLS_BOT', desc: 'Testing tools for cybersecurity learners. Meant only for research and education.', features: ['Cybersecurity tools', 'Research purposes', 'Educational only', 'Safe testing'] },
+            tech: { icon: 'fas fa-headset', name: 'MD TECH', handle: '@MD_TECH_BOT', url: 'https://t.me/MD_TECH_BOT', desc: 'Contact me for support and inquiries. Research and education assistance.', features: ['Contact support', 'Quick responses', 'Help & guidance', 'Community support'] },
+            cloud: { icon: 'fas fa-cloud', name: 'MD CLOUD BOTS', handle: '@MD_CLOUD_BOTS_BOT', url: 'https://t.me/MD_CLOUD_BOTS_BOT', desc: 'My BOT CLOUD. Supports multiple platforms and services.', features: ['Multi-platform', 'Cloud services', 'Bot hosting', '24/7 uptime'] },
+            social: { icon: 'fas fa-share-nodes', name: 'MD SOCIAL', handle: '@MD_SOCIAL_BOT', url: 'https://t.me/MD_SOCIAL_BOT', desc: 'Automate posting, likes, comments, follows. AI-powered captions & scheduling.', features: ['Auto posting', 'AI captions', 'Multi-platform', 'Scheduling'] },
+            checkers: { icon: 'fas fa-check-circle', name: 'MD CHECKERS', handle: '@MD_CHECKERS_BOT', url: 'https://t.me/MD_CHECKERS_BOT', desc: 'Check configs, cookies, and account login status. Supports browser cookies.', features: ['Config checking', 'Cookie validation', 'Account status', 'Premium checkers'] },
+            autopost: { icon: 'fas fa-clock', name: 'MD AUTO POST', handle: '@MD_AUTO_POST_BOT', url: 'https://t.me/MD_AUTO_POST_BOT', desc: 'Set post times. Send to multiple channels. Control via inline menu.', features: ['Scheduled posting', 'Multiple channels', 'Inline controls', 'Time zones'] },
+            otp: { icon: 'fas fa-mobile-alt', name: 'MD TECH OTP', handle: '@MD_TECH_OTP_BOT', url: 'https://t.me/MD_TECH_OTP_BOT', desc: 'Receive OTPs with Virtual Numbers. Multiple country support.', features: ['Virtual numbers', 'OTP receiving', 'Multiple countries', 'Fast delivery'] },
+            music: { icon: 'fas fa-music', name: 'MD MUSIC', handle: '@MD_TECH_MUSIC_BOT', url: 'https://t.me/MD_TECH_MUSIC_BOT', desc: 'All-in-One Music Streaming Bot. Telegram & Groups support.', features: ['Music streaming', 'Group support', 'Search & play', 'Queue management'] },
+            scrapper: { icon: 'fas fa-database', name: 'MD SCRAPPER', handle: '@MD_SCRAPPER_BOT', url: 'https://t.me/MD_SCRAPPER_BOT', desc: 'Secure OTP bot for login, testing & user verification.', features: ['Secure OTP', 'Login testing', 'Verification', 'Data scraping'] }
+        };
+
+        function showBot(type) {
+            const bot = botData[type];
+            if (!bot) return;
+
+            document.getElementById('modalIcon').innerHTML = `<i class="${bot.icon}"></i>`;
+            document.getElementById('modalTitle').textContent = bot.name;
+            document.getElementById('modalSubtitle').textContent = bot.handle;
+            document.getElementById('modalDescription').textContent = bot.desc;
+
+            const featuresHtml = bot.features.map(f => `<li><i class="fas fa-check" style="color: var(--accent-green);"></i> ${f}</li>`).join('');
+            document.getElementById('modalFeatures').innerHTML = featuresHtml;
+
+            document.getElementById('modalLinks').innerHTML = `<a href="${bot.url}" target="_blank" class="social-btn btn-tg"><i class="fab fa-telegram"></i> Open Bot</a>`;
+
+            document.getElementById('modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('modal').addEventListener('click', function (e) { if (e.target === this) closeModal(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+        function toggleNav() { document.querySelector('.nav-links').classList.toggle('active'); }
+        document.addEventListener('mousemove', (e) => {
+            document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+            document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
+        });
+        const starContainer = document.getElementById('stars');
+        for (let i = 0; i < 60; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.width = (Math.random() * 2.5 + 1) + 'px';
+            star.style.height = star.style.width;
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starContainer.appendChild(star);
+        }
+    </script>
+</body>
+
+</html>

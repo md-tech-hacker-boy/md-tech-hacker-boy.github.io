@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD TECH | Channels</title>
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/4do0hv.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="stars-container" id="stars"></div>
+
+    <!-- Modal Popup -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon"><i class="fas fa-broadcast-tower"></i></div>
+                <div class="modal-title">
+                    <h2 id="modalTitle">Channel Name</h2>
+                    <span id="modalSubtitle">Description</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalDescription">Full description goes here...</p>
+                <h3><i class="fas fa-star"></i> What to Expect</h3>
+                <ul class="feature-list" id="modalFeatures"></ul>
+                <h3><i class="fas fa-gavel"></i> Rules</h3>
+                <ul class="feature-list" id="modalRules"></ul>
+                <div class="modal-links" id="modalLinks"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="./index.html" class="nav-logo">
+            <img src="https://files.catbox.moe/4do0hv.png" alt="Logo">
+            MD TECH
+        </a>
+        <ul class="nav-links">
+            <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="./about/index.html"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="./channels.html" class="active"><i class="fas fa-broadcast-tower"></i> Channels</a></li>
+            <li><a href="./bots.html"><i class="fas fa-robot"></i> Bots</a></li>
+        </ul>
+        <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="section" style="padding-top: 2rem;">
+                <div class="section-header">
+                    <h2><i class="fas fa-broadcast-tower"></i> <span class="gradient-text">All Channels</span></h2>
+                    <p>Click any channel for more details</p>
+                </div>
+
+                <div class="cards-grid">
+                    <!-- AnimeXToonVerse -->
+                    <div class="glass-card clickable tilt-element" onclick="showChannel('anime')">
+                        <div class="icon-box i-orange"><i class="fas fa-film"></i></div>
+                        <h3>MD AnimeXToonVerse</h3>
+                        <p><i class="fas fa-arrow-right"></i> Ultimate hub for anime & cartoon adventures!</p>
+                        <div class="card-links">
+                            <a href="https://t.me/+MU7UbtNWnQNlMjhl" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-broadcast-tower"></i> Main</a>
+                            <a href="https://t.me/+Y9zviRUA93s1ZTk1" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-comments"></i> Group</a>
+                            <a href="https://t.me/+YAe7l4OF7605NzM1" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-shield-alt"></i> Backup</a>
+                        </div>
+                    </div>
+
+                    <!-- Tech Bots -->
+                    <div class="glass-card clickable tilt-element" onclick="showChannel('bots')">
+                        <div class="icon-box i-cyan"><i class="fas fa-robot"></i></div>
+                        <h3>MD TECH BOTS</h3>
+                        <p><i class="fas fa-arrow-right"></i> Telegram & Discord bot updates, tools & tips</p>
+                        <div class="card-links">
+                            <a href="https://t.me/MD_TECH_BOTS" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-broadcast-tower"></i> Main</a>
+                            <a href="https://t.me/MD_TECH_BOTS_CHAT" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-comments"></i> Group</a>
+                            <a href="https://t.me/+ZszWb3GyZw4wMzM1" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-shield-alt"></i> Backup</a>
+                        </div>
+                    </div>
+
+                    <!-- Games -->
+                    <div class="glass-card clickable tilt-element" onclick="showChannel('games')">
+                        <div class="icon-box i-green"><i class="fas fa-gamepad"></i></div>
+                        <h3>MD GAMES</h3>
+                        <p><i class="fas fa-arrow-right"></i> Gaming guides, hacks & tips</p>
+                        <div class="card-links">
+                            <a href="https://t.me/+koH157X1ZUtlZWI1" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-broadcast-tower"></i> Main</a>
+                            <a href="https://t.me/+e3U0NkNjkl9jNzQ9" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-comments"></i> Group</a>
+                            <a href="https://t.me/+d_hPNr06UYRhYTQ9" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-shield-alt"></i> Backup</a>
+                        </div>
+                    </div>
+
+                    <!-- Hack & Crack -->
+                    <div class="glass-card clickable tilt-element" onclick="showChannel('hack')">
+                        <div class="icon-box i-red"><i class="fas fa-terminal"></i></div>
+                        <h3>MD HACK AND CRACK</h3>
+                        <p><i class="fas fa-arrow-right"></i> Ethical hacking, coding & tech tricks</p>
+                        <div class="card-links">
+                            <a href="https://t.me/+nPj_ASEVLqk2NTVl" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-broadcast-tower"></i> Main</a>
+                            <a href="https://t.me/+CUvZBWW3FZ84Yzg1" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-comments"></i> Group</a>
+                            <a href="https://t.me/+v0ScEuvRcEk4YjJl" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-shield-alt"></i> Backup</a>
+                        </div>
+                    </div>
+
+                    <!-- Movies -->
+                    <div class="glass-card clickable tilt-element" onclick="showChannel('movies')">
+                        <div class="icon-box i-orange"><i class="fas fa-video"></i></div>
+                        <h3>MD MOVIES CENTRE</h3>
+                        <p><i class="fas fa-arrow-right"></i> Latest movies & collections</p>
+                        <div class="card-links">
+                            <a href="https://t.me/+D88fZhmzO-ZkMjQ9" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-broadcast-tower"></i> Main</a>
+                            <a href="https://t.me/+EjRIOLHwdLtjY2Y9" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-comments"></i> Group</a>
+                            <a href="https://t.me/+F12ALxcrinYyODU1" target="_blank" class="card-link"
+                                onclick="event.stopPropagation()"><i class="fas fa-shield-alt"></i> Backup</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team -->
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-users"></i> Our Team</h2>
+                </div>
+                <div class="glass-card" style="max-width: 700px; margin: 0 auto; text-align: center;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+                        <a href="https://t.me/MD_TECH_HACKER" target="_blank" class="social-btn btn-tg"><i
+                                class="fas fa-crown"></i> Owner: @MD_TECH_HACKER</a>
+                        <a href="https://t.me/TECH_TAMIL_MD" target="_blank" class="social-btn"><i
+                                class="fas fa-user-shield"></i> @TECH_TAMIL_MD</a>
+                        <a href="https://t.me/TAMIL_FACTS_MD" target="_blank" class="social-btn"><i
+                                class="fas fa-user-shield"></i> @TAMIL_FACTS_MD</a>
+                        <a href="https://t.me/MD_TECH_SUPPORT" target="_blank" class="social-btn"><i
+                                class="fas fa-headset"></i> @MD_TECH_SUPPORT</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Rules -->
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-gavel"></i> Community Rules</h2>
+                </div>
+                <div class="glass-card" style="max-width: 800px; margin: 0 auto;">
+                    <ul style="list-style: none; padding: 0; line-height: 2.5;">
+                        <li><i class="fas fa-heart" style="color: #ff6b6b; margin-right: 12px;"></i> <strong>Be
+                                respectful</strong> — no spam, harassment, or hate speech</li>
+                        <li><i class="fas fa-ban" style="color: var(--accent-orange); margin-right: 12px;"></i>
+                            <strong>No spam</strong> — no self-promotion or unrelated links
+                        </li>
+                        <li><i class="fas fa-exclamation-triangle" style="color: #feca57; margin-right: 12px;"></i>
+                            <strong>No illegal content</strong> — strictly prohibited
+                        </li>
+                        <li><i class="fas fa-bullseye" style="color: var(--accent-cyan); margin-right: 12px;"></i>
+                            <strong>Stay on topic</strong> — post relevant content only
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="https://files.catbox.moe/4do0hv.png" alt="Logo">
+            MD TECH
+        </div>
+        <p>&copy; 2026 <strong>MD TECH</strong>. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const channelData = {
+            anime: {
+                icon: 'fas fa-film', title: 'MD AnimeXToonVerse', subtitle: 'Ultimate hub for anime & cartoon adventures!',
+                desc: 'Welcome to MD AnimeXToonVerse! Join thousands of anime and cartoon fans for daily episodes, discussions, and nostalgia-packed content.<br><br>All content is for entertainment & educational purposes only ✅<br>We do not claim ownership of any shows, cartoons, or anime ⚠️<br>✨🎵 𝑳𝒆𝒕 𝒕𝒉𝒆 𝒅𝒂𝒚 𝒔𝒕𝒂𝒓𝒕 𝒘𝒊𝒕𝒉 𝒂 𝒔𝒎𝒊𝒍𝒆 🚀',
+                features: [
+                    { icon: 'fas fa-smile', text: 'Fun-filled moments, laughter, and heartwarming stories' },
+                    { icon: 'fas fa-calendar-day', text: 'Daily episodes, updates, and nostalgia-packed vibes' },
+                    { icon: 'fas fa-gamepad', text: 'Action, comedy, adventure, and epic battles' },
+                    { icon: 'fas fa-music', text: 'Iconic soundtracks and theme songs' },
+                    { icon: 'fas fa-shield-alt', text: 'Safe and fun community for all ages' }
+                ],
+                rules: [
+                    { icon: 'fas fa-heart', text: 'Be respectful — no spam or hate speech' },
+                    { icon: 'fas fa-ban', text: 'No illegal content or self-promotion' },
+                    { icon: 'fas fa-comments', text: 'Stay on topic (anime, cartoons)' }
+                ],
+                links: [
+                    { url: 'https://t.me/+MU7UbtNWnQNlMjhl', icon: 'fas fa-broadcast-tower', text: 'Main Channel' },
+                    { url: 'https://t.me/+Y9zviRUA93s1ZTk1', icon: 'fas fa-comments', text: 'Main Group' },
+                    { url: 'https://t.me/+YAe7l4OF7605NzM1', icon: 'fas fa-shield-alt', text: 'Backup' }
+                ]
+            },
+            bots: {
+                icon: 'fas fa-robot', title: 'MD TECH BOTS', subtitle: 'Telegram & Discord bot updates, tools & tips',
+                desc: 'Discover 25+ powerful Telegram bots for automation, tools, and more. All bots are for educational purposes.',
+                features: [
+                    { icon: 'fas fa-code', text: '25+ Telegram Bots available' },
+                    { icon: 'fas fa-tools', text: 'Automation tools & scripts' },
+                    { icon: 'fas fa-book', text: 'Educational resources' },
+                    { icon: 'fas fa-lock', text: 'Privacy-focused bots' }
+                ],
+                rules: [
+                    { icon: 'fas fa-graduation-cap', text: 'Use for education only' },
+                    { icon: 'fas fa-ban', text: 'No scamming or spamming' }
+                ],
+                links: [
+                    { url: 'https://t.me/MD_TECH_BOTS', icon: 'fas fa-broadcast-tower', text: 'Main Channel' },
+                    { url: 'https://t.me/MD_TECH_BOTS_CHAT', icon: 'fas fa-comments', text: 'Group' },
+                    { url: './bots.html', icon: 'fas fa-list', text: 'All Bots' }
+                ]
+            },
+            games: {
+                icon: 'fas fa-gamepad', title: 'MD GAMES', subtitle: 'Gaming guides, hacks & tips',
+                desc: 'Join the gaming community for latest guides, tutorials, tricks, and updates on trending games.',
+                features: [
+                    { icon: 'fas fa-book-open', text: 'Latest gaming guides & tutorials' },
+                    { icon: 'fas fa-fire', text: 'Updates on trending games' },
+                    { icon: 'fas fa-users', text: 'Community discussions' },
+                    { icon: 'fas fa-lightbulb', text: 'Tips & tricks' }
+                ],
+                rules: [
+                    { icon: 'fas fa-heart', text: 'Be respectful and friendly' },
+                    { icon: 'fas fa-ban', text: 'No spam or unrelated links' }
+                ],
+                links: [
+                    { url: 'https://t.me/+koH157X1ZUtlZWI1', icon: 'fas fa-broadcast-tower', text: 'Main Channel' },
+                    { url: 'https://t.me/+e3U0NkNjkl9jNzQ9', icon: 'fas fa-comments', text: 'Group' },
+                    { url: 'https://t.me/+d_hPNr06UYRhYTQ9', icon: 'fas fa-shield-alt', text: 'Backup' }
+                ]
+            },
+            hack: {
+                icon: 'fas fa-terminal', title: 'MD HACK AND CRACK', subtitle: 'Ethical hacking, coding & tech tricks',
+                desc: 'Learn ethical hacking, coding insights, and tech resources. All content is for educational purposes only.',
+                features: [
+                    { icon: 'fas fa-laptop-code', text: 'Educational tutorials on ethical hacking' },
+                    { icon: 'fas fa-brain', text: 'Coding insights & tech resources' },
+                    { icon: 'fas fa-bolt', text: 'Safe & responsible learning' }
+                ],
+                rules: [
+                    { icon: 'fas fa-graduation-cap', text: 'Educational purposes only' },
+                    { icon: 'fas fa-ban', text: 'No illegal content' }
+                ],
+                links: [
+                    { url: 'https://t.me/+nPj_ASEVLqk2NTVl', icon: 'fas fa-broadcast-tower', text: 'Main Channel' },
+                    { url: 'https://t.me/+CUvZBWW3FZ84Yzg1', icon: 'fas fa-comments', text: 'Group' },
+                    { url: 'https://t.me/+v0ScEuvRcEk4YjJl', icon: 'fas fa-shield-alt', text: 'Backup' }
+                ]
+            },
+            movies: {
+                icon: 'fas fa-video', title: 'MD MOVIES CENTRE', subtitle: 'Latest movies & collections',
+                desc: 'Get HD movie links, trailers, reviews, and recommendations. A safe community for movie lovers.',
+                features: [
+                    { icon: 'fas fa-film', text: 'HD movie links & trailers' },
+                    { icon: 'fas fa-star', text: 'Reviews & recommendations' },
+                    { icon: 'fas fa-fire-alt', text: 'Trending movies' }
+                ],
+                rules: [
+                    { icon: 'fas fa-heart', text: 'Be respectful and friendly' },
+                    { icon: 'fas fa-ban', text: 'No spam or illegal content' }
+                ],
+                links: [
+                    { url: 'https://t.me/+D88fZhmzO-ZkMjQ9', icon: 'fas fa-broadcast-tower', text: 'Main Channel' },
+                    { url: 'https://t.me/+EjRIOLHwdLtjY2Y9', icon: 'fas fa-comments', text: 'Group' },
+                    { url: 'https://t.me/+F12ALxcrinYyODU1', icon: 'fas fa-shield-alt', text: 'Backup' }
+                ]
+            }
+        };
+
+        function showChannel(type) {
+            const ch = channelData[type];
+            if (!ch) return;
+            document.getElementById('modalIcon').innerHTML = `<i class="${ch.icon}"></i>`;
+            document.getElementById('modalTitle').textContent = ch.title;
+            document.getElementById('modalSubtitle').textContent = ch.subtitle;
+            document.getElementById('modalDescription').innerHTML = ch.desc;
+            document.getElementById('modalFeatures').innerHTML = ch.features.map(f => `<li><i class="${f.icon}"></i> ${f.text}</li>`).join('');
+            document.getElementById('modalRules').innerHTML = ch.rules.map(r => `<li><i class="${r.icon}"></i> ${r.text}</li>`).join('');
+            document.getElementById('modalLinks').innerHTML = ch.links.map(l => `<a href="${l.url}" target="_blank" class="social-btn btn-tg"><i class="${l.icon}"></i> ${l.text}</a>`).join('');
+            document.getElementById('modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('modal').addEventListener('click', function (e) { if (e.target === this) closeModal(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+        function toggleNav() { document.querySelector('.nav-links').classList.toggle('active'); }
+        document.addEventListener('mousemove', (e) => {
+            document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+            document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
+        });
+        const starContainer = document.getElementById('stars');
+        for (let i = 0; i < 60; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.width = (Math.random() * 2.5 + 1) + 'px';
+            star.style.height = star.style.width;
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starContainer.appendChild(star);
+        }
+        document.addEventListener("mousemove", (e) => {
+            document.querySelectorAll(".tilt-element").forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left, y = e.clientY - rect.top;
+                if (x > -100 && x < rect.width + 100 && y > -100 && y < rect.height + 100) {
+                    card.style.transform = `perspective(1000px) rotateX(${((y - rect.height / 2) / (rect.height / 2)) * -5}deg) rotateY(${((x - rect.width / 2) / (rect.width / 2)) * 5}deg)`;
+                } else { card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)'; }
+            });
+        });
+    </script>
+</body>
+
+</html>
