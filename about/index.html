@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD TECH | About</title>
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/4do0hv.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="stars-container" id="stars"></div>
+
+    <!-- Modal Popup -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon"><i class="fab fa-telegram"></i></div>
+                <div class="modal-title">
+                    <h2 id="modalTitle">Platform</h2>
+                    <span id="modalSubtitle">@handle</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalDescription">Description...</p>
+                <div class="modal-links" id="modalLinks"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="../index.html" class="nav-logo">
+            <img src="https://files.catbox.moe/4do0hv.png" alt="Logo">
+            MD TECH
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="../about/index.html" class="active"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="../channels.html"><i class="fas fa-broadcast-tower"></i> Channels</a></li>
+            <li><a href="../bots.html"><i class="fas fa-robot"></i> Bots</a></li>
+        </ul>
+        <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+    </nav>
+
+    <main>
+        <!-- Hero / Developer Card -->
+        <section class="hero-section">
+            <div class="dev-card tilt-element">
+                <div class="profile-wrapper">
+                    <div class="profile-pic">
+                        <img src="https://files.catbox.moe/hu2zx0.png" alt="MD Tech Hacker">
+                    </div>
+                    <div class="status-dot"></div>
+                </div>
+                <div class="dev-content">
+                    <div class="dev-label">FOUNDER OF MD TECH</div>
+                    <div class="dev-name">『 ★ MD TECH HACKER ★ 』</div>
+                    <p class="dev-bio">
+                        Full Stack Developer & Tech Enthusiast specializing in Apps, Websites, Bots & Advanced UI/UX.
+                        Building digital experiences with code that works.
+                    </p>
+                    <div class="tech-icons" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                        <span class="social-btn" style="cursor: default; padding: 8px 14px; font-size: 0.85rem;"><i
+                                class="fab fa-python"></i> Python</span>
+                        <span class="social-btn" style="cursor: default; padding: 8px 14px; font-size: 0.85rem;"><i
+                                class="fab fa-js"></i> JavaScript</span>
+                        <span class="social-btn" style="cursor: default; padding: 8px 14px; font-size: 0.85rem;"><i
+                                class="fab fa-css3-alt"></i> CSS</span>
+                        <span class="social-btn" style="cursor: default; padding: 8px 14px; font-size: 0.85rem;"><i
+                                class="fab fa-php"></i> PHP</span>
+                        <span class="social-btn" style="cursor: default; padding: 8px 14px; font-size: 0.85rem;"><i
+                                class="fab fa-html5"></i> HTML</span>
+                        <span class="social-btn" style="cursor: default; padding: 8px 14px; font-size: 0.85rem;"><i
+                                class="fas fa-mobile-alt"></i> Dart</span>
+                    </div>
+                    <div class="social-btns">
+                        <a href="https://t.me/MD_TECH_HACKER" target="_blank" class="social-btn btn-tg"><i
+                                class="fab fa-telegram"></i> Telegram</a>
+                        <a href="https://youtube.com/@TECHTAMILMD" target="_blank" class="social-btn btn-yt"><i
+                                class="fab fa-youtube"></i> YouTube</a>
+                        <a href="https://github.com/MD-TECH-HACKER" target="_blank" class="social-btn btn-gh"><i
+                                class="fab fa-github"></i> GitHub</a>
+                        <a href="https://discord.gg/a2NqQjngRA" target="_blank" class="social-btn btn-dc"><i
+                                class="fab fa-discord"></i> Discord</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- About Section -->
+            <section class="section" style="padding-top: 0;">
+                <div class="section-header">
+                    <h2><i class="fas fa-info-circle"></i> About Me</h2>
+                </div>
+                <div class="glass-card" style="max-width: 800px; margin: 0 auto;">
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem; color: var(--text-muted);">
+                        I'm <strong style="color: var(--accent-orange);">MD</strong> — a tech explorer with a passion
+                        for hacking, automation, and system customization. I work across platforms like Termux and
+                        Android to build clean, efficient, and powerful tools. My journey is fueled by curiosity and a
+                        drive to make systems smarter.
+                    </p>
+
+                    <h3 style="margin-bottom: 1rem; color: var(--accent-cyan);"><i class="fas fa-tools"></i> Tools I Use
+                    </h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <span class="social-btn" style="cursor: default;"><i class="fas fa-terminal"></i> Termux /
+                            Shell</span>
+                        <span class="social-btn" style="cursor: default;"><i class="fab fa-python"></i> Python</span>
+                        <span class="social-btn" style="cursor: default;"><i class="fab fa-node-js"></i> Node.js</span>
+                        <span class="social-btn" style="cursor: default;"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="social-btn" style="cursor: default;"><i class="fab fa-android"></i> Android</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Connect Section -->
+            <section class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-globe"></i> Connect With Me</h2>
+                    <p>Click any platform for more details</p>
+                </div>
+                <div class="cards-grid" style="max-width: 1000px; margin: 0 auto;">
+
+                    <div class="glass-card clickable tilt-element" onclick="showPlatform('telegram')"
+                        style="text-align: center;">
+                        <div class="icon-box i-cyan" style="margin: 0 auto 1rem;"><i class="fab fa-telegram"></i></div>
+                        <h3>Telegram</h3>
+                        <p>@MD_TECH_HACKER</p>
+                    </div>
+
+                    <div class="glass-card clickable tilt-element" onclick="showPlatform('github')"
+                        style="text-align: center;">
+                        <div class="icon-box" style="margin: 0 auto 1rem; background: rgba(255,255,255,0.1);"><i
+                                class="fab fa-github"></i></div>
+                        <h3>GitHub</h3>
+                        <p>Open Source Projects</p>
+                    </div>
+
+                    <div class="glass-card clickable tilt-element" onclick="showPlatform('youtube')"
+                        style="text-align: center;">
+                        <div class="icon-box i-red" style="margin: 0 auto 1rem;"><i class="fab fa-youtube"></i></div>
+                        <h3>YouTube</h3>
+                        <p>Tech Tutorials</p>
+                    </div>
+
+                    <div class="glass-card clickable tilt-element" onclick="showPlatform('instagram')"
+                        style="text-align: center;">
+                        <div class="icon-box"
+                            style="margin: 0 auto 1rem; background: rgba(228, 64, 95, 0.15); color: #e4405f;"><i
+                                class="fab fa-instagram"></i></div>
+                        <h3>Instagram</h3>
+                        <p>Updates & Lifestyle</p>
+                    </div>
+
+                    <div class="glass-card clickable tilt-element" onclick="showPlatform('twitter')"
+                        style="text-align: center;">
+                        <div class="icon-box" style="margin: 0 auto 1rem; background: rgba(255,255,255,0.1);"><i
+                                class="fab fa-twitter"></i></div>
+                        <h3>X (Twitter)</h3>
+                        <p>Thoughts & Tech</p>
+                    </div>
+
+                    <div class="glass-card clickable tilt-element" onclick="showPlatform('discord')"
+                        style="text-align: center;">
+                        <div class="icon-box"
+                            style="margin: 0 auto 1rem; background: rgba(88, 101, 242, 0.15); color: #5865f2;"><i
+                                class="fab fa-discord"></i></div>
+                        <h3>Discord</h3>
+                        <p>Community Server</p>
+                    </div>
+
+                    <div class="glass-card clickable tilt-element" onclick="showPlatform('whatsapp')"
+                        style="text-align: center;">
+                        <div class="icon-box i-green" style="margin: 0 auto 1rem;"><i class="fab fa-whatsapp"></i></div>
+                        <h3>WhatsApp</h3>
+                        <p>Channel Updates</p>
+                    </div>
+
+                    <div class="glass-card clickable tilt-element" onclick="showPlatform('facebook')"
+                        style="text-align: center;">
+                        <div class="icon-box"
+                            style="margin: 0 auto 1rem; background: rgba(24, 119, 242, 0.15); color: #1877f2;"><i
+                                class="fab fa-facebook"></i></div>
+                        <h3>Facebook</h3>
+                        <p>Page & Posts</p>
+                    </div>
+
+                    <div class="glass-card clickable tilt-element" onclick="showPlatform('reddit')"
+                        style="text-align: center;">
+                        <div class="icon-box i-orange" style="margin: 0 auto 1rem;"><i class="fab fa-reddit"></i></div>
+                        <h3>Reddit</h3>
+                        <p>u/TECH_TAMIL_MD</p>
+                    </div>
+
+                    <div class="glass-card clickable tilt-element" onclick="showPlatform('twitch')"
+                        style="text-align: center;">
+                        <div class="icon-box"
+                            style="margin: 0 auto 1rem; background: rgba(145, 70, 255, 0.15); color: #9146ff;"><i
+                                class="fab fa-twitch"></i></div>
+                        <h3>Twitch</h3>
+                        <p>Live Streams</p>
+                    </div>
+
+                    <div class="glass-card clickable tilt-element" onclick="showPlatform('mdtech')"
+                        style="text-align: center;">
+                        <div class="icon-box i-green" style="margin: 0 auto 1rem;"><i class="fab fa-telegram"></i></div>
+                        <h3>MD TECH Universe</h3>
+                        <p>Official Channel</p>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="https://files.catbox.moe/4do0hv.png" alt="Logo">
+            MD TECH
+        </div>
+        <p>&copy; 2026 <strong>MD TECH</strong>. All Rights Reserved.</p>
+        <p><a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Home</a></p>
+    </footer>
+
+    <script>
+        const platformData = {
+            telegram: { icon: 'fab fa-telegram', name: 'Telegram', handle: '@MD_TECH_HACKER', desc: 'Connect with me directly on Telegram for tech discussions, bot updates, and community support.', url: 'https://t.me/MD_TECH_HACKER' },
+            github: { icon: 'fab fa-github', name: 'GitHub', handle: 'MD-TECH-HACKER', desc: 'Explore my open source projects, tools, and contributions to the developer community.', url: 'https://github.com/MD-TECH-HACKER' },
+            youtube: { icon: 'fab fa-youtube', name: 'YouTube', handle: '@TECHTAMILMD', desc: 'Watch tech tutorials, coding guides, and app development videos on my channel.', url: 'https://youtube.com/@TECHTAMILMD' },
+            instagram: { icon: 'fab fa-instagram', name: 'Instagram', handle: '@md_tech_hacker', desc: 'Follow for tech updates, behind-the-scenes content, and lifestyle posts.', url: 'https://instagram.com/md_tech_hacker' },
+            twitter: { icon: 'fab fa-twitter', name: 'X (Twitter)', handle: '@md_tech_hacker', desc: 'Get my thoughts on tech, coding tips, and industry news in real-time.', url: 'https://x.com/md_tech_hacker' },
+            discord: { icon: 'fab fa-discord', name: 'Discord', handle: 'MD TECH Server', desc: 'Join our Discord community for discussions, collaborations, and support.', url: 'https://discord.gg/a2NqQjngRA' },
+            whatsapp: { icon: 'fab fa-whatsapp', name: 'WhatsApp', handle: 'Channel Updates', desc: 'Subscribe to my WhatsApp channel for exclusive updates and announcements.', url: 'https://whatsapp.com/channel/0029Vb6GFV689inmwmitfk2t' },
+            facebook: { icon: 'fab fa-facebook', name: 'Facebook', handle: 'MD Tech Hacker', desc: 'Follow my Facebook page for posts, updates, and community engagement.', url: 'https://www.facebook.com/share/p/1qDSett9oW5Gb532/' },
+            reddit: { icon: 'fab fa-reddit', name: 'Reddit', handle: 'u/TECH_TAMIL_MD', desc: 'Join discussions on Reddit about tech, coding, and digital tools.', url: 'http://reddit.com/u/TECH_TAMIL_MD' },
+            twitch: { icon: 'fab fa-twitch', name: 'Twitch', handle: 'tech_tamil_md', desc: 'Watch my live streams on Twitch for coding sessions and tech talks.', url: 'https://www.twitch.tv/tech_tamil_md' },
+            mdtech: { icon: 'fab fa-telegram', name: 'MD TECH Universe', handle: '@MD_TECH_UNIVERSE', desc: 'Join the official MD TECH Universe channel for exclusive content, updates, bots, and tech resources.', url: 'https://t.me/MD_TECH_UNIVERSE' }
+        };
+
+        function showPlatform(type) {
+            const p = platformData[type];
+            if (!p) return;
+            document.getElementById('modalIcon').innerHTML = `<i class="${p.icon}"></i>`;
+            document.getElementById('modalTitle').textContent = p.name;
+            document.getElementById('modalSubtitle').textContent = p.handle;
+            document.getElementById('modalDescription').textContent = p.desc;
+            document.getElementById('modalLinks').innerHTML = `<a href="${p.url}" target="_blank" class="social-btn btn-tg"><i class="${p.icon}"></i> Visit ${p.name}</a>`;
+            document.getElementById('modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('modal').addEventListener('click', function (e) { if (e.target === this) closeModal(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+        function toggleNav() { document.querySelector('.nav-links').classList.toggle('active'); }
+        document.addEventListener('mousemove', (e) => {
+            document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+            document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
+        });
+        const starContainer = document.getElementById('stars');
+        for (let i = 0; i < 60; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.width = (Math.random() * 2.5 + 1) + 'px';
+            star.style.height = star.style.width;
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starContainer.appendChild(star);
+        }
+        document.addEventListener("mousemove", (e) => {
+            document.querySelectorAll(".tilt-element").forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left, y = e.clientY - rect.top;
+                if (x > -100 && x < rect.width + 100 && y > -100 && y < rect.height + 100) {
+                    card.style.transform = `perspective(1000px) rotateX(${((y - rect.height / 2) / (rect.height / 2)) * -5}deg) rotateY(${((x - rect.width / 2) / (rect.width / 2)) * 5}deg)`;
+                } else { card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)'; }
+            });
+        });
+    </script>
+</body>
+
+</html>
